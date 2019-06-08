@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	div{
+	width : 500px;
+	height : auto;
+	border : 1px solid blue;
+	margin : 10px;
+	padding : 10px;
+	}
+</style>
+<script>
+
+//함수를 정의한다. 자바에서는 메서드와 같다.
+	function datepro(){
+		
+		var now = new Date();
+		//document.write(now + "<br>");
+		
+		dateString = now.toLocaleString();
+		//document.write(dateString + "<br>");
+		
+		date = now.toLocaleDateString();
+		time = now.toLocaleTimeString();
+		//document.write(date + "<br>");
+		//document.write(time + "<br>");
+		
+		
+		//div요소에 출력 -innerHTML, textContent
+		//div요소에 접근하는 방법
+	
+		//elediv = document.getElementsByTagName('div')[0];
+		elediv = document.getElementById('result1');
+		//elediv = document.getElementsByClassName('aa')[1];
+		
+		elediv.innerHTML = now +"<br>";
+		elediv.innerHTML += dateString + "<br>";
+		elediv.innerHTML += date + "<br>";
+		elediv.innerHTML += time + "<br>";
+	}
+	
+	
+	
+</script>
+</head>
+<body>
+	<p>버튼을 클릭하면 오늘의 날짜를 출력</p>
+	<p>오늘의 날짜 : var now = new Date();</p>
+	<p>now.toLocaleString();</p>
+	<p>now.toLocaleDateString();</p>
+	<p>now.toLocaleTimeString();</p>
+	<p>div요소에 출력 - innerHTML, textContent</p>
+	<p>div요소에 접근 - elediv = document.getElementById('result1');</p>
+
+	<button class ="aa" type="button" onclick="datepro()">실행</button><br>
+	<div class ="aa" id="result1"></div>
+</body>
+</html>

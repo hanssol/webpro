@@ -1,0 +1,42 @@
+
+
+pre{
+	font-size : 1.2em;
+	color : blue;
+	border : 1px solid red;
+}
+
+div{
+	width: 500px;
+	height: auto;
+	border: 1px solid blue;
+	margin: 10px;
+	padding: 10px;
+}
+
+
+@CHARSET "UTF-8";
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+*{margin:0; padding:0}
+ul {list-style-type:none}
+a {text-decoration:none}
+
+body {font-family: 'Noto Sans KR', sans-serif; font-weight:400}
+.wrap {width:610px; margin:0 auto}
+
+p {width:500px; font-size:13px; line-height:1.6em; color:#666; border:1px dashed #ccc; padding:20px; margin:10px auto}
+p span {font-weight:600; color:#2268dd}
+
+input[type=text] {border:1px solid #e1e1e1; padding:0 20px; height:36px; margin-bottom:10px}
+input[type=password] {border:1px solid #e1e1e1; padding:0 20px; height:36px; margin-bottom:10px}
+label {display:inline-block; width:150px;}
+label.gen {width:auto}
+textarea {width:100%; min-height:150px; padding:20px; box-sizing:border-box}
+
+.btn_submit {width:100%; background:#333; color:#fff; border:none; display:block; padding:10px; margin-top:20px }
+.btn_cancle {width:100%; background:#fff; color:#333; border:1px solid #333; display:block; padding:10px; margin-top:5px}
+
+
+fieldset {padding: 20px 30px 30px 30px; border: 1px solid #e1e1e1; margin-top:20px}
+fieldset legend {font-size:14px; color:#333; font-weight:600;}

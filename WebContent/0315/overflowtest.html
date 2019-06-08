@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="../css/public.css">
+<script>
+	//함수를 정의하는 부분
+	window.onload = function(){ // 콜백 메소드. 자동호출
+	
+		//div object에 접근
+		res = document.getElementById('result');
+	
+// 		출력 - innerHTML textContent
+// 		res.innerHTML = "<h1>Hello</h1>";
+// 		res.textContent = "<h1>Hello</h1>";
+		////////////////////////////////////////
+		
+		/*
+		lastIndexOf(',') : 마지막 ,의 위치
+		substring(1,5) : 문자열 추출 : 1번째 ~5-1번째 까지
+		substr(1,5) : 문자열추출 1번째 5개를
+		
+		*/
+		a = setInterval(function(){
+			
+			value = "";
+			for(i=0;i<5; i++){
+				value += parseInt(Math.random()*101)+",";
+			}
+			idx = value.lastIndexOf(','); //마지막,의 위치값 알아내기
+			value = value.substring(0,idx); // 0번째 ~ 마지막,전까지
+			
+			
+			res = document.getElementById('result');
+			res.innerHTML += value+"<br>";
+		},1000);
+		
+		console.log(a);
+			
+	}
+	function aa(){ 
+		clearInterval(a);
+	}
+</script>
+<style>
+	div{
+		width : 200px;
+		height : 200px;
+		border : 2px dotted skyblue;
+		margin : 50px;
+		padding : 10px;
+		overflow : auto;
+	}
+	span{
+		color : red;
+	}
+</style>
+</head>
+<body>
+<pre>
+<span>setInterval(function(){},1000);</span>
+	=> 1.0초마다 한번씩 function의 기능을 수행한다.
+
+	**function의 내용**
+		
+	value = "";
+			for(i=0;i<5; i++){
+				value += parseInt(Math.random()*101)+",";
+			}
+			idx = <span>value.lastIndexOf(',');</span> //마지막,의 위치값 알아내기
+			value = <span>value.substring(0,idx);</span> // 0번째 ~ 마지막,전까지
+			
+			
+			res = <span>document.getElementById('result');</span>
+			res.<span>innerHTML</span> += value+"<br>";
+	
+</pre>
+	<div id = "result"></div>
+<br>
+	<button id="stop" onclick="aa()">중지</button>
+
+
+</body>
+</html>

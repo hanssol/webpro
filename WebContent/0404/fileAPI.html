@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+ <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<style type ="text/css">
+	img{
+		display : none;
+	}
+	div{
+		border : 2px solid skyblue;
+		width : 50%;
+		height : 200px; 
+		padding : 10px;
+	}
+
+</style>
+<script type="text/javascript">
+	function fileRead(){
+		// File 객체 : 파일의 정보를 얻는다.
+		// ==> name, size, type, lastModifiedDate
+		// FileReader 객체 : 
+		// ==> 파일을 읽어서 내용을 가져온다.
+		//	readAsText(file객체변수, 인코딩) ==> 파일의 내용을 문자열로 변환
+		//	readAsDataURL(file객체변수) ==> 파일의 내용을 DataURL의 형식인 문자
+		// 속성 - result : 읽은 파일의 결과 내용을 저장하는 속성 , error : 오류발생시에 오류 정보가 저장되는 속성 
+		
+		// files는 File객체를 return한다. f변수는 File객체변수다.
+		f = document.getElementById('file').files[0];
+ 		//f = document.getElementById('file').files;
+		res ="이름 : " + f.name + "<br>";
+		res +="크기 : " +f.size + "<br>";
+		res +="유형 : " +f.type + "<br>";
+		res +="수정날짜 : " +f.lastModifiedDate.toLocaleString() + "<br>";
+		
+		document.getElementById('info').innerHTML = res;
+		
+		reader = new FileReader(); 
+
+		//reader.readAsText(f,"UTF-8"); // 결과값은 result속성이 가지고 있다.
+
+		reader.readAsDataURL(f); //data:application/  data:imge
+		
+		reader.onload = function(){
+			
+		document.getElementById('area').value = reader.result;
+		img1 = document.getElementById('img1');
+		
+		//이미지인지 아닌지 비교 - 이미지이면 display속성을 block으로 변경(display="block")
+		if(reader.result.match("image")){
+			img1.src = reader.result;
+			img1.style.display = "block";
+		}else{
+			img1.style.display = "none";
+		}
+		
+		
+		
+		}
+		
+	}
+
+</script>
+
+</head>
+<body>
+
+	<h1>HTML5 File API</h1>
+	<br>
+	<form>
+	<input type = "file" id = "file" multiple="multiple">
+	<input type = "button" value = "읽기" onclick = "fileRead()" class="btn btn-primary btn-lg">
+	<br>
+	<br>
+	<textarea id = "area" rows="10" cols="50" readonly ="readonly"></textarea>
+	<br>
+	<br>
+	<h2>파일정보</h2>	
+	<p>
+	<img src="../images/원진아.gif" id="img1">
+	</p>
+	<div id = "info"></div>
+	<br>
+	<button type="button" class="btn btn-primary btn-lg">확인</button>
+	
+	
+	</form>
+</body>
+</html>

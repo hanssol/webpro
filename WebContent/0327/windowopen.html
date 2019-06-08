@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script>
+	function proc01(){
+		window.open('subwindow.html','sub','width=500 height =800');
+	}
+	
+	function proc02(){
+		//subgugudan.html
+		window.open('subgugudan.html','gugudan','width=500 height =800')
+	}
+
+</script>
+
+<style>
+	div{
+		height : 100px;
+		border : 1px solid skyblue;
+		overflow : auto;
+	}
+</style>
+
+</head>
+<body>
+<p>
+	새로운 창을 열기 <br>
+	window.open(url)<br>
+	새롭게 열리는 창을 자식창이라고 하고<br>
+	자식창에서 부모창을 가르키는 속성을 opener라고 한다.<br>
+</p>
+
+<button type ="button" onclick = "proc01()">새창열기</button>
+<br>
+<br>
+<p>
+	자식창에서 입력받은 내용을 받아서 출력합니다.
+</p>
+
+<div id = "result01"></div>
+
+<form name = "winform">
+	이름 : <input type="text" name="wname"><br>
+	아이디 : <input type="text" name="wid"><br> 
+</form>
+
+<p>
+	a 태그로 페이지이동이 가능하다(부모 자식이 없다.)<br>
+</p>
+<a href = "http://www.naver.com" target="_blank">네이버</a>
+<br>
+
+<p>새로운 창을 열어서 숫자를 입력 받아서 구구단을 출력하세요.<br> </p>
+<button type="button" onclick = "proc02()">구구단 출력</button>
+<div id="result02"></div>
+<form name = "winform02">
+	단 : <input type="number" name="wdan"><br>
+	숫자 : <input type="number" name="wnum"><br> 
+</form>
+
+
+</body>
+</html>

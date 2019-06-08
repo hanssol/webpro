@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style>
+	img{
+		width : 200px;
+		height : 200px;
+	}
+	div{
+		width : 700px;
+		height : 500px;
+		border : 1px solid red;
+	}
+
+</style>
+<script>
+	function proc01(e){ // 이벤트 타입을 e로 받았어요
+		//a태그의 기본기능 - 페이지 이동 기능을 수행하지 않도록 한다.
+		aa = 20;
+		if(aa < 15){
+			e.preventDefault();
+			alert("15세미만 관람불가입니다.");
+		}
+	}
+	
+	function dropPro(event){
+		event.preventDefault();
+		vimg = event.dataTransfer.getData("dragtarget");
+		
+		
+		// 이벤트 대상이 되는div(event.target) 에 img를 자식으로 추가
+		// vimg를 id로 하는 이미지객체
+		//event.target.appendChild(document.getElementById(vimg));
+		//alert(event.target);
+		
+		if(event.target.tagName == "IMG"){
+			// 이미지 위에 다른 이미지가 drop 했을때 부모를 dic로 바꿔야 한다.
+			// 다른 이미지가 사라진다
+			// 그러므로 부모를 div로 바꿔야 한다.
+			// event.target : 이미지
+			event.target.parentNode.appendChild(document.getElementById(vimg));
+		}else{
+			// event.target : div
+			event.target.appendChild(document.getElementById(vimg));
+		}
+		
+		
+	}
+	
+	function dragOverPro(event){
+		event.preventDefault();
+		
+	}"WebContent/images/플바위.png"
+
+	function dragStartPro(event){
+		//alert(event.target.id);
+		event.dataTransfer.setData("dragtarget",event.target.id);
+		
+	}
+</script>
+</head>
+<body  ondrop = "dropPro(event)" ondragover = "dragOverPro(event)">
+<a href = "http://www.naver.com" onclick = "proc01(event)">네이버</a>
+<a href = "#">다음</a>
+<h2>원하는 물건을 끌어 놓으세요.</h2>
+<br>
+<div id = "result" ondrop = "dropPro(event)" ondragover = "dragOverPro(event)"></div>
+<br>
+<br>
+<img id = "img1" src = "../images/박보영.gif" draggable="true" ondragstart="dragStartPro(event)">
+<img id = "img2" src = "../images/김태리2.gif" draggable="true" ondragstart="dragStartPro(event)">
+<img id = "img3" src = "../images/한지민.gif" draggable="true" ondragstart="dragStartPro(event)">
+<img id = "img4" src = "../images/화사.jpg" draggable="true" ondragstart="dragStartPro(event)">
+<img id = "img5" src = "../images/원진아.gif" draggable="true" ondragstart="dragStartPro(event)">
+
+
+
+</body>
+</html>

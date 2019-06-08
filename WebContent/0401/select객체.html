@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style>
+	table {
+	width : 400px;
+		border : 1px solid;
+	}
+	#td01 {
+		width : 140px;
+	 }
+	#td02 {
+		width : 100px;
+		text-align : center;
+	}
+	#td03 {
+		width : 140px;
+	 }
+	#td04{
+		text-align : center;
+	}
+	select {
+		width :139px;
+	}
+	
+	#bt01 { 
+		width : 40px;
+	}
+
+</style>
+
+<script>
+window.onload = function(){
+// 	document.ff.data.focus();
+}
+	function add(){
+		
+		// 입력한 값의 공백을 제거 후 가져온다.
+		// name속성을 이용해서 요소에 접근하는 방법
+// 		datalist = document.getElementsByName("data")[0].value;
+		datavalue = document.ff.data.value;
+		if(datavalue.trim().length < 1){
+			alert("데이터를 입력하세요");
+			document.ff.data.focus();
+			return;
+		}
+		
+		// option태그를 생성
+		
+		opt = document.createElement('option');
+		// value와 text를 설정한다.
+		opt.value = datavalue;
+		opt.text = datavalue;
+		
+		// select lList에 추가 한다.
+		document.ff.lList.appendChild(opt);
+		document.ff.data.value = "";
+		document.ff.data.focus();
+		// 
+		
+		
+	}
+	
+	function toRight(){
+		// lList에서 선택한 항목을 rList로 이동
+		// lList에서 삭제되고, rList에 추가된다.
+		
+		// 선택한 항목의 인덱스를 가져온다.
+		idx = document.ff.lList.selectedIndex;
+		
+		if(idx == -1){
+			alert("선택하세요");
+			return;
+		}
+		
+		// 오른쪽으로 추가할 option태그를 생성한다.
+		opt = document.createElement('option');
+		// 왼쪽에서 선택한 번째의 값
+		optvalue = document.ff.lList.options[idx].value;
+		opt.value = optvalue;
+		opt.text = optvalue;
+		document.ff.rList.appendChild(opt);
+		
+		// 왼쪽에서 지우기 - 왼쪽에서 선택한 항목의 번째
+		document.ff.lList.removeChild(document.ff.lList.options[idx])
+	}
+	
+	function toLeft(){
+		// rList에서 선택한 항목을 lList로 이동
+		// rList에서 삭제되고, lList에 추가된다.
+		
+		// 선택한 항목의 인덱스를 가져온다.
+		idx = document.ff.rList.selectedIndex;
+		
+		if(idx == -1){
+			alert("선택하세요");
+			return;
+		}
+		
+		// 왼쪽으로 추가할 option태그를 생성한다.
+		opt = document.createElement('option');
+		// 오른쪽에서 선택한 번째의 값
+		optvalue = document.ff.rList.options[idx].value;
+		opt.value = optvalue;
+		opt.text = optvalue;
+		document.ff.lList.appendChild(opt);
+		
+		// 오른쪽에서 지우기 - 오른쪽에서 선택한 항목의 번째
+		document.ff.rList.removeChild(document.ff.rList.options[idx])
+	}
+	
+	function toRightAll(){
+		
+		f = document.ff;
+		leng = f.lList.length;
+		
+		for(i=0; i<leng; i++){
+			// 왼쪽에서 값을 선택
+			temp = f.lList.options[0].value;
+			
+			// 오른쪽으로 이동 - 새로운 option을 생성
+			opt = document.createElement('option');
+			opt.value = temp;
+			opt.text = temp;
+			f.rList.appendChild(opt);
+			
+			// 왼쪽에서 제거
+			f.lList.removeChild(f.lList.options[0]);
+		}
+		
+	}
+
+function toLeftAll(){
+		
+		f = document.ff;
+		leng = f.rList.length;
+		
+		for(i=0; i<leng; i++){
+			// 왼쪽에서 값을 선택
+			temp = f.rList.options[0].value;
+			
+			// 오른쪽으로 이동 - 새로운 option을 생성
+			opt = document.createElement('option');
+			opt.value = temp;
+			opt.text = temp;
+			f.lList.appendChild(opt);
+			
+			// 왼쪽에서 제거
+			f.rList.removeChild(f.rList.options[0]);
+		}
+		
+	}
+	function onBody(){
+		//alert("시작");
+		document.ff.data.focus();
+	}
+	
+
+</script>
+
+</head>
+
+<body onload = "onBody()">
+<form name = "ff">
+	<table border = "1">
+	
+	<tr>
+		<th colspan="3"> select 객체예제</th>
+	</tr>
+	
+	<tr>
+		<td id = "td01">
+			<select name = "lList" size = "15" multiple>
+<!-- 			<option value ="1"> 1 </option> -->
+			
+			</select>
+		</td>
+
+		<td id = "td02">
+			<br>
+			<button type="button" id = "bt01" onclick = "toRight()"> > </button>
+			<br>
+			<br>
+			<button type="button" id = "bt01" onclick = "toRightAll()"> >> </button>
+			<br>
+			<br>
+			<button type="button" id = "bt01" onclick = "toLeft()"> &lt; </button>
+			<br>
+			<br>
+			<button type="button" id = "bt01" onclick = "toLeftAll()"> &lt;&lt; </button>
+			<br>
+			
+		</td>
+
+		<td id = "td03">
+			<select name = "rList" size = "15" multiple>
+<!-- 			<option value ="1"> 1 </option> -->
+			</select>
+		</td>
+	</tr>
+	
+	<tr>
+		<td colspan = "3" id = "td04">
+			<input type = "text" name = "data">
+			<button type = "button"  onclick = "add()">추가하기</button>
+		</td>
+	</tr>
+	
+	
+	
+	</table>
+	</form>
+
+	
+	
+	
+</body>
+
+</html>

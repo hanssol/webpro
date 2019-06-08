@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function proc01(){
+		host = location.host;
+		hostname = location.hostname;
+		port = location.port;
+		pname = location.pathname;
+		href = location.href;
+		protocol = location.protocol;
+		
+		
+		res = "host ==> " + host + "<br>";
+		res += "hostname ==> " + hostname + "<br>";
+		res += "port ==> " + port + "<br>";
+		res += "pathname ==> " + pname + "<br>";
+		res += "href ==> " + href + "<br>";
+		res += "protocol ==> " + protocol + "<br>";
+		
+		document.getElementById("result01").innerHTML = res;
+		
+		
+	}
+	
+	function proc02(){
+		
+		location.href="http://www.naver.com";
+		
+	}
+
+</script>
+
+</head>
+<body>
+<button type="button" onclick="proc01()">실행</button>
+<br>
+<div id = "result01"></div>
+<br>
+<p>네이버 이동 : location.href="";</p>
+<button type="button" onclick="proc02()">실행</button>
+</body>
+</html>

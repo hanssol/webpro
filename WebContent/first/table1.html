@@ -1,0 +1,97 @@
+<html>
+	<meta charset="UTF-8">
+	<style>
+		table{
+			border : 2px solid lime;
+			border-collapse : collapse;
+		}
+	
+		td{
+	
+			width : 200px;
+			height : 50px;
+			text-align : center;
+			font-size : 1.3em;
+		}
+		th{
+			background : crimson;
+			height : 50px;
+			font-size : 1.3em;
+		}
+		#addr{
+			width : 500px;
+			height : 100px;
+		}
+		#tab {
+			border-color : blue;
+		}
+		
+		#tab td{
+			width : 300px;
+			height : 70px;
+		}
+	
+	</style>
+	<body>
+		<table border = "1" >
+			<tr>
+				<th>이름</th>
+				<th id = "addr">주소</th>
+				<th>전화번호</th>
+				<th>이메일</th>
+			</tr>
+		
+			<tr>
+				<td>홍길동</td>
+				<td>대전 띵땅뚱 꿍양똥</td>
+				<td>3</td>
+				<td>4</td>
+			</tr>
+			
+			<tr>
+				<td>개나리</td>
+				<td>부산</td>
+				<td></td>
+				<td></td>
+			</tr>
+			
+			<tr>
+				<td>진달래</td>
+				<td>천안</td>
+				<td></td>
+				<td></td>
+			</tr>
+		</table>
+		
+		<hr>
+		<br>
+		<pre>
+			행병합 : rowspan : 세로로 병합
+			열병합 : colspan : 가로로 병합
+		</pre>
+			<table border = "1" id = "tab">
+			
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			
+			<tr>
+				<td rowspan = "2"></td>
+				<td></td>
+				<td></td>
+			</tr>
+			
+			<tr>
+				<td></td>
+				<td></td>
+			</tr>
+			
+			<tr>
+				<td colspan = "3"></td>
+			</tr>
+			
+			</table>
+	</body>
+</html>

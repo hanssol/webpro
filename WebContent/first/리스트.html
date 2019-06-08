@@ -1,0 +1,185 @@
+<html>
+	<meta charset="UTF-8">
+	<style>
+		img{
+			width: 100px;
+			height : 100px;
+		}
+		pre {
+		padding-top : 10px;
+			font-size : 1.5em;
+			border :5px solid crimson;/*dptted(점선) double(두줄선) dashed(긴 점선) inset outset*/
+			/*
+				border-width : 5px;
+				border-style : solid;
+				border-color : crimson;
+		
+				border-bottom : 10px dashed blue;
+				border-top : 5px dotted green;
+			*/
+			width : 50%;
+		}
+		/*
+		hr {
+			width : 50%;
+			border-width : 10px;
+		}
+		*/
+		a{
+			font-size : 1.5 em;
+			text-decoration : line-through;
+		}
+		a:link{
+			color : green;
+		}
+		a:visited{
+			color : pupple;
+		}
+		a:hover{
+			color : red;
+		}
+		a:active{
+			color : blue;
+		}
+		
+	</style>
+	<body>
+		<pre>
+			ul : 번호없는 리스트 ;
+			li : 리스트 아이템 : 텍스트로 구성
+		</pre>
+	
+		<ul>
+			<li>아메리카노</li>
+			<li>에스프레소</li>
+			<li>카페라떼</li>
+			<li>카푸치노</li>
+		</ul>
+		<hr color = 'red'> 
+		<pre>
+			ul : 번호없는 리스트 ;
+			li : 리스트 아이템 : 이미지로 구성
+		</pre>
+		<ul>	
+			<li> <img src ="../images/coffee2_아메리카노.jpg" /> </li>
+			<li> <img src ="../images/coffee1_카페라떼.jpg" /> </li>
+			<li> <img src ="../images/coffee5_카푸치노.jpg" /> </li>
+			<li> <img src ="../images/coffee4_카페모카.jpg" /> </li>
+		</ul>
+		
+		<hr>
+		
+		<pre>
+ul : 번호없는 리스트 ;
+li : 리스트 아이템 : 링크로 구성
+a:link{ 처음 만든상태, 한번도 방문하지 않은 상태
+
+}
+a:visited{ 한번이상 방문한적이 있는 상태
+
+}
+a:hover{ 마우스를 올려 놓았을때
+
+}
+a:active{ 마우스를 누르고 있는 상태
+
+}
+		</pre>
+		<ul>
+			<li> <a href="아메리카노.html"> 아메리카노 </a> </li>
+			<li> <a href="에스프레소.html"> 에스프레소 </a> </li>
+			<li> <a href="카푸치노.html"> 카푸치노 </a> </li>
+			<li> <a href="카페라떼.html"> 카페라떼 </a> </li>
+		</ul>
+		
+		<hr>
+		
+		<pre>
+ul : 번호없는 리스트 ;
+li : 리스트 아이템 : 이미지링크로 구성
+
+		</pre>
+		<ul>
+			<li> 
+				<a href="아메리카노.html" target ="_blank"> 
+				<img src ="../images/coffee2_아메리카노.jpg" />
+				</a> 
+			</li>
+			
+			<li> 
+				<a href="에스프레소.html" target ="_blank"> 
+				<img src ="../images/coffee4_카페모카.jpg" /> 
+				</a> 
+			</li>
+			
+			<li> 
+				<a href="카푸치노.html" target ="_blank">  
+				<img src ="../images/coffee5_카푸치노.jpg" /> 
+				</a> 
+			</li>
+			
+			<li> 
+				<a href="카페라떼.html" target ="_self"> 
+				<img src ="../images/coffee1_카페라떼.jpg" /> 
+				</a> 
+			</li>
+		</ul>
+		
+		<hr>
+		
+		<pre>
+		ul : 번호없는 리스트 ;
+		li : 리스트 아이템 : 다른 리스트로 구성
+		</pre>
+		<ul>
+			<li> 커피메뉴
+				<ol>
+					<li> 아메리카노 </li>
+					<li> 카푸치노 </li>
+					<li> 카페라떼 </li>
+				</ol>
+			</li>
+			
+			<li> 빙수메뉴
+				<ol>
+					<li> 아메리카노 </li>
+					<li> 카푸치노 </li>
+					<li> 카페라떼 </li>
+				</ol>
+			</li>
+			
+		</ul>
+		
+		<hr>
+		
+		<pre>
+		ul : 번호있는 리스트 ;
+		li : 리스트 아이템:
+		</pre>
+		<ol>
+			<li>아메리카노</li>
+			<li>에스프레소</li>
+			<li>카페라떼</li>
+			<li>카푸치노</li>
+		</ol>
+		<hr>
+		<pre>
+		정의 리스트(definition list): 
+		항목들과 함께 항목들의 정의(설명)가 표시되는 리스트
+
+		</pre>
+		<dl>
+			<dt>에스프레소</dt>
+			<dd>- 커피의 기본, 커피의 원액이다.</dd>
+			
+			<dt>아메리카노</dt>
+			<dd>- 에스프레소에 물을 넣은 것</dd>
+			
+			<dt>카페라떼</dt>
+			<dd>- 커피에 우유를 섞은 것</dd>
+		</dl>
+
+		
+		
+	</body>
+</html>

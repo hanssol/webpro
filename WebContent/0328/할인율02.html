@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	window.onload=function(){
+		
+		//이벤트 일괄적 등록 - class가 dd인 요소에 접근
+		box = document.getElementsByClassName("dd");
+		for(i=0; i<box.length;i++){
+			// 이벤트 Listener를 등록 (이벤트종류 : click, 실행함수 : boxSale => 함수이지만 변수형식으로 사용한다.) 
+			box[i].addEventListener('click', boxSale);
+		}
+		
+	}	
+	ptag = null;
+	function boxSale(){
+	// event라는 내장객체를 사용해서 이벤트의 대상을 얻는다.
+	// alert(event.target); // img객체
+	
+	// alert(this); // div객체
+		
+		if(ptag != null){
+			pp = document.getElementById('pp');
+			pp.parentNode.removeChild(pp);
+		}
+	
+		rand = Math.floor(Math.random()*6+5);
+		ptag = document.createElement('p');
+		ptag.setAttribute('id',"pp");
+		
+		ptext = document.createTextNode("할인율 : " + rand + "%" );
+		ptag.appendChild(ptext);
+		this.appendChild(ptag);
+		
+		//event 제거
+		this.removeEventListener('click',boxSale);
+		
+	}
+
+	function proc01(t){
+		rand = Math.floor(Math.random()*6+5);
+		ptag = document.createElement('p');
+		
+		ptext = document.createTextNode("할인율 : " + rand + "%");
+		
+		ptag.appendChild(ptext);
+		t.appendChild(ptag);
+	}
+</script>
+</head>
+<body>
+
+	<div id ="main">
+		
+			<div class ="dd">
+				<img src= "../images/원진아.gif">
+			</div>
+				
+			<div class ="dd">
+				<img src= "../images/민국.gif">
+			</div>
+				
+			<div class ="dd">
+				<img src= "../images/김태리2.gif">
+			</div>
+					
+			<div class ="dd">
+				<img src= "../images/한지민.gif">
+			</div>
+	</div>
+</body>
+</html>

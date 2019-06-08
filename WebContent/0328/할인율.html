@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+ function sale(t){
+	 p = document.createElement("p");
+	 tag = t.appendChild(p);
+	 
+	 rand = Math.floor(Math.random()*6+5);
+	 res = "할인율 "+rand+"%";
+	 saleNum = document.createTextNode(res);
+	 
+	 textAdd = tag.appendChild(saleNum);
+	 
+// 	 tag = document.getElementsByTagName('div')[1];
+// 	 res = rand+"%"
+	 
+// 	 divtag = document.getElementsByTagName('img01')[0];
+ }
+
+</script>
+<style>
+	.img01{
+		width : auto;
+		height : 500px;
+		border : 1px solid;
+	}
+	img {
+		width : 250px;
+		height : 200px;
+		vertical-align: middle;
+	}
+/* 	.pp { */
+/* 		display :inline-block; */
+/* 		width : 300px; */
+/* 		height : 300px; */
+/* 	 } */
+	 .dd{
+		 width : 251px;
+		height : 290px;
+		display: inline-block;
+	 }
+</style>
+
+
+</head>
+<body>
+
+	<div class ="img01">
+		
+			<div class ="dd" onclick = "sale(this)">
+				<img src= "../images/원진아.gif">
+			</div>
+				
+			<div class ="dd" onclick = "sale(this)">
+				<img src= "../images/민국.gif">
+			</div>
+				
+			<div class ="dd" onclick = "sale(this)">
+				<img src= "../images/김태리2.gif">
+			</div>
+					
+			<div class ="dd" onclick = "sale(this)">
+				<img src= "../images/한지민.gif">
+			</div>
+					
+	</div>
+	
+	
+</body>
+</html>

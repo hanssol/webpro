@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+p{
+	font-size : 1.3em;
+	background : yellow;	
+}
+
+</style>
+<script >
+	window.onload = function(){
+		//p태그로 접근
+		ptag = document.getElementsByTagName('p')[0];
+		/*
+		setTimeout(function(){
+			ptag.style.backgroundColor = 'green';
+		
+		},1000)
+		*/
+		///////////////////////////////////////////////////////////
+		
+		
+		a = setInterval(function(){
+			
+			ptag.style.backgroundColor = ptag.style.backgroundColor == 'green' ? 'yellow' : 'green';
+			
+// 			if(ptag.style.backgroundColor == 'green'){
+// 				ptag.style.backgroundColor = 'yellow';
+// 			}else{
+// 				ptag.style.backgroundColor = 'green';
+// 			}
+		},1000);
+	
+		//////////////////////////////////////////////////////////
+		// 여러가지 색상으로 변경 - 랜덤을 이용
+		/*
+			색상지정방법 - rgb(255, 128, 200);
+					 - rgb(100%, 88%, 50%);
+					 - #ffd4f6;
+		*/
+		//r.toString(16) => 16진수로 변경
+		
+// 		a = setInterval(change,500);
+		
+	}
+	function change(){
+		r = Math.floor(Math.random()*256);
+		g = Math.floor(Math.random()*256);
+		b = Math.floor(Math.random()*256);
+		
+// 		ptag.style.backgroundColor = 'rgb('+ r +',' +  g + ',' + b + ')';
+		ptag.style.backgroundColor = '#' + r.toString(16) + g.toString(16) + b.toString(16);
+	}
+	function stop(){
+		clearInterval(a);
+	}
+</script>
+
+
+
+</head>
+<body>
+<p>무숭과 꽃이 피었습니다.</p>
+<br>
+<button type ="button" onclick="stop()">중지</button>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function getProc(){
+		divtag = document.getElementsByTagName('div')[0];
+		alert(divtag.innerHTML);
+	}
+	function setProc(){
+		divtag = document.getElementsByTagName('div')[0];
+		str = ["Hello","Good!~~~","Happy","둥근해가 떴다","무궁화"];
+		rand = Math.floor(Math.random()*str.length);
+		divtag.innerHTML = str[rand];
+	}
+	function imgchange(){
+		str = ["김태리.gif","김태리2.gif","김태리3.gif","민국.gif","박보영.gif","원진아.gif","한지민.gif","한지민2.gif","한지민3.gif","한지민4.gif","한지민5.gif"];
+		rand = Math.floor(Math.random()*str.length);
+		document.getElementById("img1").src ="../../images/"+str[rand];
+	}
+</script>
+<style>
+	img{
+		width:300px;
+		height:250px;
+	}
+</style>
+</head>
+<body>
+<div>무궁화 꽃이 피었습니다</div>
+<a href ="#" onclick="getProc()">div내용 가져오기(출력)</a>
+<br>
+<a href ="#" onclick="setProc()">div내용 변경하기</a>
+<br>
+<br>
+<img id ="img1" src = "../../images/원진아.gif">
+<button type ="button" onclick="imgchange()">이미지 변경</button>
+</body>
+</html>

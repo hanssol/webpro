@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function proc01(){
+		name = document.ff.name.value;
+		gender = document.ff.gender.value;
+		
+		like = "";
+		for(i=0;i<document.ff.like.length; i++){
+			if(document.ff.like[i].checked){
+				like += document.ff.like[i].value + " ";
+			}
+		}
+		
+		res = name + "님 \n";
+		res += "당신은" + gender + "이군요. \n";
+		res += "당신의 취미는 " + like + "입니다.";
+		
+// 		like = document.ff.like.values;
+		document.ff.area.value = res;
+		
+		
+	}
+
+</script>
+</head>
+<body>
+<form name = "ff">
+	이 름 : <input type = "text" name = "name" id = "name">
+<br>
+	성 별 : <input type ="radio" name ="gender" id="male"  value = "남자"> 남  <input type ="radio" name ="gender" id="female"  value = "여자"> 여
+<br>
+	취 미 : <input type ="checkbox" name = "like" id = "travel" value = "여행"> 여행
+		  <input type ="checkbox" name = "like" id = "book" value = "독서"> 독서
+		  <input type ="checkbox" name = "like" id = "movie" value = "영화감상"> 영화감상
+		  <input type ="checkbox" name = "like" id = "mountain" value = "등산"> 등산
+		  <input type ="checkbox" name = "like" id = "fishing" value = "낚시"> 낚시
+		  <input type ="checkbox" name = "like" id = "bowling" value = "볼링"> 볼링
+<br>
+	<button type = "button" id = "result" onclick="proc01()">결과출력</button>
+<br>
+	<textarea name = "area" rows="20" cols="40"></textarea>
+</form>
+</body>
+</html>

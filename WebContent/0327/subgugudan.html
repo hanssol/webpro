@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script>
+window.onload = function(){
+	document.ff.dan.focus();
+	
+}
+
+	function inputPro02(){
+		//danvalue = document.getElementById("dan").value;
+		//numvalue = document.getElementById("num").value;
+		
+		danvalue = document.ff.dan.value;
+		
+		res = "***" + danvalue + "단 ***<br>";
+		for(i=1;i<10;i++){
+			res += danvalue +"*" + i +" =" +(danvalue*i) + "<br>";
+			
+		}
+		opener.document.getElementById('result02').innerHTML = res;
+		opener.document.winform.wname.value = danvalue;
+		window.close();
+	}
+
+</script>
+
+</head>
+<body>
+<h1>gugudan</h1>
+	<p>새로운 창이 열렸습니다.<br>이 창은 자식창입니다.<br>자식창에서 입력받은 내용을 부모창으로 전달 할 수 있습니다.<br>부모창을 나타내는 속성은 opener입니다.</p>	
+	
+	<form name ="ff">
+		단 : <input type ="number" name = "dan" id = "dan"><br>
+		<input type = "button" value ="확인" onclick="inputPro02()">
+	</form>
+</body>
+</html>

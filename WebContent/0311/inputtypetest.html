@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type = "text/css" href="../css/public.css">
+<style>
+	pre{
+		font-size : 2.0em;
+		border : 3px solid blue;
+	
+	}
+	#id{
+	}
+	#name{
+	}
+	.txt{
+	//height:130px;
+	}
+	#img{
+		width:150px;
+		height:130px;
+	}
+
+</style>
+
+<script>
+//사용자 정의 함수
+function proc(){ 
+	
+	aa = parseInt(Math.random()*100);
+	alert(aa);
+}
+
+</script>
+
+</head>
+<body>
+	<pre>
+		type : 입력하는 데이터의 형태
+			text : 한줄입력
+			radio : 여러개 중에서 한개를 선택
+			checkbox : 여러개선택 또는 한개선택 또는 선택이 없을 수 있다.
+			hidden : 화면에서는 보이지 않는다. 서버로 값이 전송되어진다.
+			image : 전송버튼역할을 한다. submit과 같은 역할
+			button : 이벤트를 부여해서 전송역할을 한다.
+		name : 서버로 전송시 입력한 데이터로 보내기 위한 속성
+		textarea  태그(요소)
+		button 태그(요소)
+			type을 지정하지 않으면 submit(전송)역할을 수행한다.
+	</pre>
+	<form action="typetest.jsp" method="post">
+	아이디 :	<input type="text" name="id" id="id" class ="txt"> <br>
+	이름 : <input type="text" name="name" id="name" class ="txt"> <br>
+	비밀번호 : <input type="password" name="pass"> <br>
+	성별 : <input type="radio" name="gender" value="남자">남자
+		 <input type="radio" name="gender" value="여자">여자 <br>
+	취미 : <input type="checkbox" name="like">독서
+		 <input type="checkbox" name="like">여행
+		 <input type="checkbox" name="like">영화보기
+		 <input type="checkbox" name="like">낚시
+		 <input type="checkbox" name="like">음악감상
+		 <input type="checkbox" name="like">게임
+		 <input type="checkbox" name="like">프로그램 코딩
+		 <input type="checkbox" name="like">만들기
+		 <input type="checkbox" name="like">놀기
+		 <input type="checkbox" name="like">공부 <br>
+	자기소개 <br>
+	<textarea rows="20" cols="50">
+	</textarea> <br>
+	<input type="hidden" name="price"value="1000">
+	
+	첨부파일 <input type="file" name="file" ><br>
+
+	<input type="image" src="../images/아이린.gif" id="img" alt="이미지전송"><br>
+	<input type="submit" value="전송">
+	<input type="reset" value="초기화"> <br>
+	<button>전송버튼</button>
+	
+	<pre>
+	함수 : 기능을 수행하는 블럭
+	사용자 정의 함수 : function 함수이름(){} 직접 정의하고 호출한다
+	내장함수 : 이미 정의가 되어 있는 함수 alert()
+	</pre>
+	<input type="button" value="input확인" onclick="alert('환영합니다.')">
+	<button type ="button" onclick="proc()">button확인</button>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	</form>
+</body>
+</html>

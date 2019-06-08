@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script>
+	function proc01(){
+		//입력 
+		input = prompt("생년월일을 입력하세요.","110326-4123456");
+		//생년월일 , 성별, 나이 출력
+		
+		birthyear = input.slice(0,2);
+		year02 = birthyear;
+		
+		birthmonth = input.slice(2,4);
+		
+		birthday = input.slice(4,6);
+		gender = input.charAt(7);
+		
+		if(gender == 1 || gender == 3){
+			str = "남성입니다.";
+		}else if(gender == 2 || gender == 4){
+			str = "여성입니다.";
+		}else{
+			str = "잘못입력했습니다.";
+		}
+		
+		
+		//나이
+		if(gender == 1 || gender == 2){
+			age01 = 1900;
+	
+		}else if(gender == 2 || gender == 4){
+			age01 = 2000;
+
+		}
+		
+		today = new Date();
+		cyear = today.getFullYear();
+		
+		year = age01 + parseInt(year02);
+		
+		age = cyear - year;
+		
+		res = "생년월일 : " + year02 + "년"+ birthmonth + "월" + birthday+"일" + "<br>";
+		res += "성별 : " + str + "<br>";
+		res += "나이 : " + age + "세<br>";
+		
+		document.getElementById("result01").innerHTML += res;
+	}
+	
+	 function proc02(){
+	      //입력
+	      input = prompt("입력해봐", '- 포함해서 입력!'); 
+	      num = input.split("-"); //num[0] = 123456 , num[1] = 1234567
+	      nums = num[0].concat(num[1]);
+	      
+//	       str = "234567892345";
+	      sum = 0;
+	      
+	      for(i=0; i<nums.length; i++){
+//	          sum += nums[i] * str.charAt(i);
+	         sum+= nums[i] * (i % 8 + 2);
+	      }
+	      
+	      result = 11 -(sum%11); //0~11
+//	       if(result==10) result = 0;
+//	       if(result==11) result = 1; 
+	      
+	      result = result % 10; //0~9
+	      
+//	       if(nums[nums.length-1]==result) alert("진짜");
+//	       else alert("가짜");
+	      
+	      if(nums[nums.length-1]==result) str = "진짜";
+	      else str = "가짜";
+	      
+	      res = "입력번호 : " +num[0] + "-" + num[1].slice(0,1) + "******" + "<br>";
+	      res +="결과 : " +str;	      
+	      
+	      document.getElementById("result02").innerHTML += res;         
+	   }
+
+</script>
+
+
+</head>
+<body>
+	<p>
+	주민등록번호를 입력 받아 생년월일과 성별을 출력하는 <br>
+	프로그램을 작성하시오.(입력은 prompt로 입력받는다.) <br>
+	</p>
+
+	<button type ="button" onclick = "proc01()" >실행</button>
+	<br>
+	<div id ="result01"></div>
+	<br>
+	<hr color = "skyblue">
+	<br>
+	<p>
+	주민등록번호를 입력 받아 주민등록번호의 유효성을  <br>
+	검사하는 프로그램을 작성하시오.(ABCDEF-GHIJKLM) <br>
+	</p>
+		<button type ="button" onclick = "proc02()" >실행</button>
+	<br>
+	<div id ="result02"></div>
+</body>
+</html>

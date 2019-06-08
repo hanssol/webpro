@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function start(){
+		
+		//컴은 랜덤
+		arr = ["가위","바위","보"];
+		rand = Math.floor(Math.random()* arr.length);
+		
+		com = arr[rand];
+		man = prompt("가위 바위 보 입력");
+		
+		
+		
+		//이미지 변경
+		 document.getElementById("rImg").src ="../images/" + com + "_우.PNG";
+		 document.getElementById("lImg").src ="../images/" + man + "_좌.PNG";
+		//승자비교
+		if(com == man){
+			str = "비겼습니다.";
+		}else if(man == "가위" && com =="보" ||
+				man == "바위" && com =="가위" ||
+				man == "보" && com =="바위" ){
+			str = "내가 이겼다.";
+		}else {
+			str = "컴이 이겼습니다."
+		}
+		result.innerHTML = "결과 " + str;
+		
+	}
+
+</script>
+
+
+<style>
+	table{
+		border:1px solid;
+		border-collapse: collapse;
+	}
+	table th{
+		border:1px solid black;
+	}
+	table td{
+		text-align : center;
+		border:1px solid black;
+	}
+	#th01 {
+		background:yellow;
+	}
+	#th02 {
+		background:red;
+	}
+</style>
+
+</head>
+<body>
+<h1>가위 바위 보</h1>
+<table border = "1">
+	<tr>
+		<td colspan="2">
+			<button type="button" onclick="start()">게임시작</button>
+			</td>
+	</tr>
+
+	<tr>
+		<th id = "th01">사람</th>
+		<th id = "th02">컴퓨터</th>
+	</tr>
+
+	<tr>
+		<td><img src="../images/가위_좌.PNG" id = "lImg"></td>
+		<td><img src="../images/가위_우.PNG" id = "rImg"></td>
+	</tr>
+
+	<tr>
+		<td colspan="2" id = "result">결과 : </td>
+	</tr>
+</table>
+
+
+</body>
+</html>

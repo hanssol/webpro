@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	
+	table{
+/* 		border-collapse : collapse; */
+		border-spacing : 10px; /*collapse가 설정되면 spacing는 실행되지 않는다.*/
+		
+		empty-cells: hide;
+		margin-left : 30%; 
+		
+	}
+
+	td{
+	text-align : center;
+		width : 200px;
+		height : 50px;
+	}
+	th{
+		height : 50px;
+	}
+	caption{
+		font-size : 1.5em;
+		margin: 20px;
+		border : 1px solid skyblue;
+		caption-side : bottom;
+	}
+	
+	.alt{
+		background : yellow;
+	}
+	tr:nth-child(odd){
+		background :pink;
+	}
+	tr:nth-child(1){
+		background : skyblue !important;
+	}
+	
+	form#ff1{
+ 		visibility: hidden; /* window에서는 차지 하고 있는 영역이 있다.*/
+	}
+	#ff2{
+  		display:none;  /* window에서는 차지 하고 있는 영역이 없다. */
+	
+	}
+</style>
+
+</head>
+
+<body>
+border-spacing : 10px;<br>
+empty-cells:hide;
+<br><br>
+
+<form id="ff1">
+	이름 : <input type="text"><br>
+	비밀번호 : <input type="password"><br>
+	아이디 : <input type="hidden"><br>
+</form>
+
+<form id="ff2">
+	이름2 : <input type="text"><br>
+	비밀번호2 : <input type="password"><br>
+	아이디2 : <input type="hidden"><br>
+</form>
+<br><br>
+
+	<table border ="1">
+		<caption>VIP리스트</caption>
+	
+		<tr>
+			<td>1</td>
+			<td>2</td>
+			<td>3</td>
+		</tr>
+		
+		<tr class="alt">
+			<th>1</th>
+			<th>2</th>
+			<th>3</th>
+		</tr>
+	
+		<tr>
+			<td>1</td>
+			<td>2</td>
+			<td></td>
+		</tr>
+		
+		<tr class="alt">
+			<td>1</td>
+			<td>2</td>
+			<td></td>
+		</tr>
+		
+		<tr>
+			<td>1</td>
+			<td>2</td>
+			<td></td>
+		</tr>
+	
+	</table>
+</body>
+</html>

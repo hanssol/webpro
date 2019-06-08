@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function changeColor(c){
+		document.getElementById("target").style.backgroundColor = c;
+	}
+	function changeColor2(){
+// 		doucument.target.inradio2.value;
+		color = document.ff.inradio2.value;
+		
+// 		list = document.getElementsByName('inradio2');
+		
+// 		for(i = 0; i<list.length; i++){
+// 			if(list[i].checked) list[i].value
+// 		}
+		
+		
+		document.getElementById("target").style.backgroundColor = color;
+		
+	}
+	function sub(){
+		// text에 입력한 값을 가져온다.
+		text = document.inputForm.text.value;
+		
+		// 소문자로 변경
+		text = text.toLowerCase();
+		
+		document.inputForm.text.value = text;
+	}
+	function downPro(t){
+		t.style.backgroundColor = 'yellow';
+		
+	}
+	
+	function upPro(t){
+		t.style.width = '200px';
+		
+	}
+	
+	function clickPro(t){
+		t.style.color='red';
+		
+	}
+	
+	
+	
+</script>
+<style>
+
+	button:hover{
+		background :red;
+		
+	}
+	
+	a:link{
+		
+	}
+	a:visited{
+		
+		
+	}
+	a:hover{
+		
+		
+	}
+	button:active{
+		
+		
+	}
+
+</style>
+
+
+</head>
+<body id = "target">
+
+<input type="radio" name="inradio" value ="lightgreen" onclick = "changeColor('lightgreen')">green
+<input type="radio" name="inradio" value ="lightblue" onclick = "changeColor('lightblue')">blue
+<br>
+<hr>
+<br>
+<form name ="ff">
+<input type="radio" name="inradio2" value ="lightgreen" onclick = "changeColor2('lightgreen')">green
+<input type="radio" name="inradio2" value ="lightblue" onclick = "changeColor2('lightblue')">blue
+</form>
+<br>
+<hr>
+<br>
+<form name="inputForm">
+	영어단어 : <input  type ="text" name = "text" id="name" onchange="sub()">
+	<p>입력필드를 벗어나면 소문자로 변경됩니다.</p>
+	</form>
+<br>
+<hr>
+<br>
+	<button type = "button" onmousedown="downPro(this)">실행mousedown</button>
+	<button type = "button" onmouseup="upPro(this)">실행mouseup</button>
+	<button type = "button" onclick="clickPro(this)">실행click</button>
+	
+	
+</body>
+</html>

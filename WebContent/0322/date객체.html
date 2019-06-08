@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	window.onload = function(){
+		
+		today01 = new Date();
+		today02 = new Date(10000000);
+		today03 = new Date("2012.2.14");
+		today04 = new Date(2019, 3, 15,12,20,32);
+		
+		result = document.getElementById('result01');
+		
+		result.innerHTML = "new Date(); ==> " + today01 + "<br>";
+		result.innerHTML += "new Date(10000000); ==> " + today02 + "<br>";
+		result.innerHTML += "new Date('2012.2.14'); ==> " + today03 + "<br>";
+		result.innerHTML += "new Date(2019, 3, 15,12,20,32); ==> " + today04 + "<br>";
+		result.innerHTML += "<hr color = 'skyblue'>";
+		
+		result.innerHTML +="today01.toLocaleString() ==> "+ today01.toLocaleString() + "<br>";
+		
+		//정해진 시간 간격마다 매번 반복 실행
+		setInterval(function(){
+			today = new Date();
+			todaylocale = today.toLocaleString();
+			
+			res ="<h2>정해진 시간 간격마다 매번 반복 실행</h2>";
+			res += "setInterval(function() { 기능 },1000)<br>";
+			res += "toLocaleString() 함수를 이용해서 우리나라 형식으로 변환 :" + todaylocale;
+			
+			document.getElementById('result02').innerHTML = res;
+
+			year = today.getFullYear();
+			month = today.getMonth()+ 1;
+			date = today.getDate();
+			day = today.getDay();
+			hour = today.getHours();
+			min = today.getMinutes();
+			sec = today.getSeconds();
+			
+			switch(day){
+			case 0:
+				str ="일";
+				break;
+			case 1:
+				str ="월";
+				break;
+			case 2:
+				str ="화";
+				break;
+			case 3:
+				str ="수";
+				break;
+			case 4:
+				str ="목";
+				break;
+			case 5:
+				str ="금";
+				break;
+			case 6:
+				str ="토";
+				break;
+			}
+			
+			res ="<h2>get메소드를 이용한 결과</h2>";
+		
+			res += year + "년 " + month + "월 " + date + "일 <br>";
+			res += hour + "시 " + min + "분 " + sec + "초 <br>" + str + "요일 입니다.";
+			
+			document.getElementById("result03").innerHTML = res;
+			
+			arrday = ["일요일", "월요일", "화요일", "수요일", "목요일", "금요일", "토요일"];
+			arrday[0],arrday[]
+			
+			res = "<h2>배열을 이용한 요일 구하기 </h2>";
+			res += " getDay() 함수 실행결과 0~6 일요일, 월요일 ~ 토요일을 나타낸다.<br>";
+			
+			res += "오늘은" + arrday[day] + "<br>";
+			
+			document.getElementById("result04").innerHTML = res;
+			
+			
+		}, 1000);
+		
+	}
+</script>
+
+<style>
+	div{
+		font-size : 1.5em; 
+	}
+
+</style>
+
+</head>
+<body>
+<p>
+	Date객체 사용<br>
+	new Date() // 현재 날짜와 시간<br>
+	new Date(milliseconds) //1970/01/01 이후의 밀리초<br>
+	new Date(dateString)<br>
+	new Date(year, month, date[, hours[, minutes[, seconds[,ms]]]])<br>
+</p>
+<div id ="result01"></div>
+<br><br>
+<hr>
+<br>
+1초마다 시간을 갱신해서 출력한다.
+<div id="result02"></div>
+<div id="result03"></div>
+<div id="result04"></div>
+
+
+
+
+
+
+</body>
+</html>

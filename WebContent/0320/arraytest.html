@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function proc01(){
+		arr01 = ["사과","바나나","복숭아","참외","딸기","수박","귤"];
+		
+		//document.getElementById('result01').innerHTML = arr01;
+		
+// 		res = "";
+// 		for(i = 0;i < arr01.length; i++){
+// 			res += (i+1) + "번째요소 : " + arr01[i] + "<br>";
+// 		}
+// 		document.getElementById('result01').innerHTML = res;
+
+// 		result = document.getElementById('result01');
+		result = 'result01';
+		print(arr01);
+	}
+	function print(arr){
+
+		res = "";
+		for(i = 0; i < arr.length; i++){
+			res += (i+1) + "번째요소 : " + arr[i] + "<br>";
+		}
+		document.getElementById(result).innerHTML = res;
+// 		result.innerHTML = res;
+		
+	}
+	function proc02(){
+		arr02 = new Array();
+		arr02[0]="개나리";
+		arr02[1]="들국화";
+		arr02[2]="프리지아";
+		arr02[3]="튤립";
+		arr02[4]="수국";
+		
+// 		result = document.getElementById('result02');
+		result = 'result02';
+		print(arr02);
+	}
+	function proc03(){
+		arr03 = new Array(100,200,300,400,250);
+		result ='result03';
+		print(arr03);
+		
+	}
+	
+	
+</script>
+
+
+</head>
+<body>
+	<p>
+		리터럴에 의한 배열생성 <br>
+		arr01 = ["사과","바나나","복숭아","참외","딸기","수박","귤"];<br>
+	</p>
+<button type="button" onclick="proc01()">실행</button>
+<div id="result01"></div>
+<br>
+<br>
+<br>
+<hr>
+	<p>
+		Array객체에 의한 배열생성 - 인수가 없는 생성자 <br>
+		arr02 = new Array();<br>
+	</p>
+<button type="button" onclick="proc02()">실행</button>
+<div id="result02"></div>
+<br>
+<br>
+<br>
+<hr>
+	<p>
+		Array객체에 의한 배열생성-생성자에 인수를 이용한 생성 <br>
+		arr03 = new Array(100,200,300,400,250);<br>
+	</p>
+<button type="button" onclick="proc03()">실행</button>
+<div id="result03"></div>
+</body>
+</html>

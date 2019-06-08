@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	form{
+		width : 50%;
+		border : 1px solid skyblue;
+		padding : 10px; 
+		margin : 10px auto;
+	}
+</style>
+<script>
+	function proc01(){
+		//document.getElementsByName('dan')
+		
+		// form이 있는 입력양식에서의 요소 접근
+		// 직접 이름을 사용
+		danvalue = document.ff.dan.value;
+		
+		res = "***" + danvalue + "단*** \n\n";
+		
+		for(i=1;i<10;i++){
+			res += danvalue +" X "+ i +" = " + (danvalue*i) + "\n";
+		}
+		document.ff.area.value = res;
+	}
+	
+	function proc02(){
+		danvalue = document.ff2.dan.value;
+		res = "***" + danvalue + "단*** <br><br>" 
+		
+		for(i=1;i<10;i++){
+			res += danvalue +" X "+ i +" = " + (danvalue*i) + "<br>";
+		}
+		document.getElementById("result01").innerHTML = res;
+	}
+</script>
+</head>
+<body>
+	<form name ="ff">
+		<input type="text" name="dan">
+		<button type="button" onclick="proc01()">실행</button>
+		<br>
+		<br>
+		<textarea name = "area" rows="10" cols="40"></textarea>
+	</form>
+	
+	<br>
+	<br>
+	<form name = "ff2">
+		<select name="dan" onchange="proc02()">
+			<option value = "1">1단</option>
+			<option value = "2">2단</option>
+			<option value = "3">3단</option>
+			<option value = "4">4단</option>
+			<option value = "5">5단</option>
+			<option value = "6">6단</option>
+			<option value = "7">7단</option>
+			<option value = "8">8단</option>
+			<option value = "9">9단</option>
+		</select>
+	
+	
+	<div id = "result01"></div>
+	</form>
+	
+	
+	
+</body>
+</html>

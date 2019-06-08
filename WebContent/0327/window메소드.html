@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script>
+window.onload =function(){
+win = window.open("subwindow.html","widow","width=400 height=400");
+	
+}
+
+	function moveByPro(){
+		win.moveBy(200,200);		
+	}
+	function moveToPro(){
+// 		win = window.open("subwindow.html","widow","width=100 height=100");
+		win.moveTo(200,200);
+	}
+	function resizeByPro(){
+		win.resizeBy(100,100);
+	}
+	function resizeToPro(){
+		win.resizeTo(200,200);
+	}
+
+</script>
+
+</head>
+<body>
+<button type = "button" onclick="moveByPro()">moveBy</button>
+<button type = "button" onclick="moveToPro()">moveTo</button>
+
+<button type = "button"onclick="resizeByPro()">resizeBy</button>
+<button type = "button"onclick="resizeToPro()">resizeTo</button>
+
+
+
+</body>
+</html>

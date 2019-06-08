@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+function proc01(){
+	circle = { 
+		r: 5, //반지름
+		
+// 		height : 58,
+		getArea : function(){
+			//return this.r * this.r *3.14;
+			return (Math.PI*Math.pow(this.r,2)).toFixed(2);
+		}
+	
+	};
+	res = "객체 출력 <br>";
+	res += "반지름 : " + circle.r + "<br>";
+	res += "면적 : " + circle.getArea();
+	res +="<hr color = 'skyblue'>";
+	document.getElementById("result01").innerHTML = res;
+	
+	
+	res = "이름과 둘레 구하는 함수 추가 <br>";
+	circle.name ="동그라미";
+	circle.getCircum = function(){
+			return (2*3.14*this.r).toFixed(2);
+	}
+	res = "이름 : " + circle.name +"<br>";
+	res += "반지름 : " + circle.r + "<br>";
+	res += "면적 : " + circle.getArea() + "<br>";
+	res += "둘레 : " + circle.getCircum();
+	res +="<hr color = 'skyblue'>";
+	document.getElementById("result01").innerHTML += res;
+	
+}
+	function proc02(){
+		
+		//객체정의
+		function Circle(name, rad){
+			this.name = name;
+			this.rad = rad;
+			
+			this.getArea = function(){
+				area = Math.PI* Math.pow(this.rad,2);
+				
+				return area.toFixed(2);
+			}
+		}
+		
+		aa = new Circle("동그라미",3);
+		res = "객체 생성<br>";
+		res += "이름 : " + aa.name + "<br>";
+		res += "반지름 : " + aa.rad + "<br>";
+		res += "면적 : " + aa.getArea() + "<br>";
+		res += "<hr color='skyblue'>";
+		
+		document.getElementById("result02").innerHTML += res;
+		
+		
+		bb = new Circle();
+		bb.name = "동글동글";
+		bb.rad = 4;
+		
+		res = "이름 : " + bb.name + "<br>";
+		res += "반지름 : " + bb.rad + "<br>";
+		res += "면적 : " + bb.getArea() + "<br>";
+		res += "<hr color='skyblue'>";
+		
+		document.getElementById("result02").innerHTML += res;
+	}
+
+</script>
+</head>
+<body>
+<p>
+	리터럴에 의한 객체생성<br>
+	circle = { }<br>
+</p>
+	<button type ="button" onclick="proc01()">실행</button>
+	<br><br>
+	<div id="result01"></div>
+	<hr>
+<p>
+	생성자에 의한 객체생성<br>
+	aa = new circle()
+	aa = new circle(4)
+</p>
+	<button type ="button" onclick="proc02()">실행</button>
+	<br><br>
+	<div id="result02"></div>
+
+</body>
+
+</html>

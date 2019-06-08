@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type = "text/css" href="../css/public.css">
+<script>
+	function calc(){
+		//입력한 값을 가져온다
+		
+		//body안의 태그(요소)에 접근하기 위한 방법
+// 		document.getElementById('price');
+// 		document.getElementsByTagName('input');
+// 		document.getElementsByName('price');
+// 		document.getElementsByClassName('txt');
+
+		//접근요소에서 값 가져오기
+		var price = document.getElementById('price').value;
+		var su = document.getElementById('su').value;
+		
+		alert(price * su+"원 입니다.");
+		
+	}
+</script>
+</head>
+<body>
+<pre>
+외부스타일을 작성하고 연결
+외부스타일 : 각각의 html파일에서 똑같은 형식으로 지정하는 스타일을
+외부파일로 작성하면 여러개의 html파일의 스타일이 일괄적으로 적용 받을 수 있다.
+&lt;link rel="stylesheet" type="text/css" href=""&gt;
+
+계산 버튼 클릭하면 calc()사용자 함수를 호출 한다
+function calc(){
+	//입력한 값을 가져온다
+		
+		//body안의 태그(요소)에 접근하기 위한 방법
+// 		document.getElementById('price');
+// 		document.getElementsByTagName('input');
+// 		document.getElementsByName('price');
+// 		document.getElementsByClassName('txt');
+
+		//접근요소에서 값 가져오기
+		var price = document.getElementById('price').value;
+		var su = document.getElementById('su').value;
+		
+		alert(price * su+"원 입니다.");
+ }
+</pre>
+	<form>
+		가격 : <input type="text" name="price" id="price"><br>
+		수량 : <input type="text" name="su" id="su"><br>
+		
+		<br>
+		<input type="button" value="계산" onclick="calc()">
+	</form>
+</body>
+</html>

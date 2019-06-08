@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/public.css" type="text/css">
+<script type="text/javascript" src="../js/scriptOut.js"></script>
+<script>
+   function proc1() {
+      input = prompt("숫자를 입력하세요.");
+      str =  "";
+      if(input >= 60){
+         str = "합격";
+      }else{
+         str = "불합격";
+      }
+      
+      res = "입력한 수 :: " + input + "점  " + str + "<br>";
+      document.getElementById("result01").innerHTML = res;
+
+   }
+   
+   function proc2() {
+      input = prompt("숫자를 입력하세요.");
+      str = "";
+      if(input%2 == 0){
+         str = "짝수";
+      }else{
+         str = "홀수";
+      }
+      
+      res = "숫자 " + input + "는 " + str + "입니다";
+      document.getElementById("result02").innerHTML = res;
+   
+   }
+
+   function proc3() {
+      input = prompt("숫자를 입력하세요.");
+      str = "";
+      
+      if(input >= 90){
+         str="수";
+      }else if(input >= 80){
+         str="우";
+      }else if(input >= 70){
+         str="미";
+      }else if(input >= 60){
+         str="양";
+      }else{
+         str="가";
+      }
+      
+      res = input + " 의 점수는 " + str + " 입니다.";
+      document.getElementById("result03").innerHTML = res;
+   }
+   
+   function proc4() {
+      inputs = 0;
+      for(i=0; i<5; i++){
+         input = parseInt(prompt("숫자를 입력하세요."));
+         inputs += input;
+      }
+      sum = inputs;
+      res = sum/5;
+      
+      str = "";
+      
+      if(res >= 60 && input >= 60){
+         str ="합격";
+      }else{
+         str ="불합격";
+      }
+      
+      result = "평균은 " + res + "이고  합계는" + sum + "입니다. " + str +" 입니다.";
+      document.getElementById("result04").innerHTML = result;
+   }
+   
+   function proc5() {
+      input1 = prompt("1.숫자를 입력하세요.");
+      input2 = prompt("2.숫자를 입력하세요.");
+      
+      if(input1 > input2){
+         str = "큰수" + input1;
+         str += "작은수" + input2;
+      }else{
+         str = "큰수" + input2;
+         str += "작은수" + input1;
+      }
+      
+      res = "입력한 수 : " + input1 +" "+ input2;
+      res += "결과 :" + str;
+      
+      document.getElementById("result05").innerHTML = res;
+
+   }   
+   
+   function proc6() {
+        num1 = parseInt(prompt("1.숫자를 입력하세요."));
+        num2 = parseInt(prompt("2.숫자를 입력하세요."));
+        operator = prompt("연산자를 입력하세요.", "+,-,/,*,%");
+        str6 = "";
+        
+        if(operator=="+") str6=num1+num2;
+        else if(operator=="-") str6=num1-num2;
+        else if(operator=="/") str6=num1/num2;
+        else if(operator=="*") str6=num1*num2;
+        else str6=num1%num2;
+        
+        res6 = "입력한 수 : " + num1 + "," + num2 + "<br>";
+        res6 += "결과 : " + num1 + operator + num2 + "=" + str6;
+        document.getElementById("result06").innerHTML = res6;
+     }
+   
+</script>
+</head>
+<body>
+   <div class="wrap">
+      <fieldset>
+         <legend>if else</legend>
+         <p>
+            if else 문제를 풀어보아용
+         </p>
+         <div class="classWrap">
+            <p>숫자를 입력받아 60점 이상이면 합격 아니면 불합격 </p>
+            <div id="result01"></div>
+            <button type="button" class="btn_func" onclick="proc1()">나와라 얍</button>
+            <p>숫자를 입력받아 홀수인지 짝수인지 출력</p>
+            <div id="result02"></div>
+            <button type="button" class="btn_func" onclick="proc2()">나와라 얍</button>
+            <p>숫자를 입력받아 수우미양가를 출력</p>
+            <div id="result03"></div>
+            <button type="button" class="btn_func" onclick="proc3()">나와라 얍</button>
+            <p>5개의 과목점수를 입력받아 평균이 60점이고 모든과목이 60점 이상이면 합격</p>
+            <div id="result04"></div>
+            <button type="button" class="btn_func" onclick="proc4()">나와라 얍</button>
+            <p>두개의 수를 입력하여 큰수와 작은수를 출력</p>
+            <div id="result05"></div>
+            <button type="button" class="btn_func" onclick="proc5()">나와라 얍</button>
+            <p>숫자 2개와 연산자 1개를 입력받아 연산자에 맞는 계산 결과를 출력하는 프로그램을 출력하는 프로그램을 작성하시오.</p>
+            <div id="result06"></div>
+            <button type="button" class="btn_func" onclick="proc6()">나와라 얍</button>
+         </div>
+      </fieldset>
+   </div>
+</body>
+</html>

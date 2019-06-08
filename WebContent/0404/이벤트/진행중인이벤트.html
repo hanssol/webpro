@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+.ig{
+	width : 200px;
+	height : 180px;
+	margin : 2px;
+	}
+
+
+</style>
+<script>
+window.onload = function(){
+	
+vimg = document.getElementsByClassName('ig')[0];
+}
+	function start(){
+		
+		vimg.style.border = "";
+		
+		event.target.setAttribute('disabled',true);
+		document.getElementById('stop').removeAttribute('disabled');
+		
+		a = setInterval(function() { 
+		
+			parent = document.getElementById('d1');
+			child = document.getElementsByClassName('ig');
+			
+			//parent.removeChild(child[0]);
+			parent.appendChild(child[0]);
+			
+		},500);
+	}
+	
+	function stop(){
+		document.getElementById('start').removeAttribute('disabled');
+		event.target.setAttribute('disabled',true);
+		
+		rand = Math.floor(Math.random()*child.length);
+		
+		vimg = child[rand];
+		vimg.style.border = "5px solid skyblue";
+		
+		clearInterval(a);
+		
+	}
+
+</script>
+</head>
+<body>
+
+<div id = "d1">
+
+	<img class="ig" src ="../../images/원진아.gif">
+	<img class="ig" src ="../../images/김태리.gif">
+	<img class="ig" src ="../../images/김태리2.gif">
+	<img class="ig" src ="../../images/김태리3.gif">
+	<img class="ig" src ="../../images/한지민.gif">
+	<img class="ig" src ="../../images/한지민2.gif">
+	<img class="ig" src ="../../images/한지민3.gif">
+	<img class="ig" src ="../../images/민국.gif">
+</div>
+<br>
+<button type ="button" id="start" onclick="start()">시작</button>
+<button type ="button" id="stop" onclick="stop()" disabled>멈춰</button>
+</body>
+</html>

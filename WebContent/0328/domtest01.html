@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	window.onload = function(){
+		ulList = document.getElementsByTagName("ul")[0];
+		liList = document.getElementsByTagName("li");
+		
+		res ="";
+		for(i=0;i<liList.length;i++){
+			res += liList[i].firstChild.data + "<br>";
+		}
+		
+		document.getElementById("result01").innerHTML = res;
+		
+	}
+	function appImg(t){ //t : 클릭한 li객체
+		// t(li)객체의 텍스트글자를 얻는다
+		imgdata = t.firstChild.data;
+		
+		// 새로운 태그로 img를 생성한다.
+		imgtag = document.createElement('img');
+		// img태그에 src속성을 설정 해준다.
+		imgtag.src = "../images/" + imgdata + ".gif";
+		// 새로운 img태그를 t(li)객체의 자식으로 추가한다.
+		t.appendChild(imgtag);
+	}
+
+</script>
+<style>
+	img {
+		width : 300px;
+		height : 250px;
+	 }
+
+</style>
+</head>
+<body>
+	<ul>
+		<li>List item 1</li>
+		<li>List item 2</li>
+		<li>List item 3</li>
+		<li>List item 4</li>
+		<li>List item 5</li>
+	</ul>
+	<br>
+	<p>list의 텍스트문자를 출력한다</p>
+	<div id="result01"></div>
+	
+	<br>
+	<br>
+		<p>
+		list의 텍스트로 이미지를 생성한다.<br>
+		&lt;img src='../images/국화.jpg'&gt;<br>
+		태그 생성 : createElement('태그명');<br>
+		추가 : 부모노드.appendChild('자식태그')<br>
+		</p>
+	<ul>
+		<li onclick="appImg(this)">민국</li>
+		<li onclick="appImg(this)">박보영</li>
+		<li onclick="appImg(this)">한지민</li>
+		<li onclick="appImg(this)">김태리2</li>
+		<li onclick="appImg(this)">한지민2</li>
+	</ul>	
+</body>
+</html>
